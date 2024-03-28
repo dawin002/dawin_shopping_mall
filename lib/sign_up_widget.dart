@@ -92,9 +92,19 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
-                    _authService.singUpWithEmailAndPassword(
-                        _emailController.text, _passwordController.text);
+                  onPressed: () async {
+                    try{
+                      final _signUpData = await _authService.singUpWithEmailAndPassword(
+                          _emailController.text, _passwordController.text);
+                      if(_signUpData == null) {
+                        print('회원가입 실패!');
+                      } else {
+                        print('회원가입 성공!');
+                        Navigator.pop(context);
+                      }
+                    } catch(e) {
+                      print(e);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(double.infinity, 50),

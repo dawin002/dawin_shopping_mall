@@ -1,8 +1,10 @@
+import 'package:dawin_shopping_mall/top_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'firebase_options.dart';
 import 'home_screen.dart';
+import 'product_list_screen.dart';
 
 Future<void> main() async {
   // 이 코드 추가해야 파이어베이스와 연결됨 (구글링해서 찾은 코드)
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const TopScreen(),
     );
   }
 }
