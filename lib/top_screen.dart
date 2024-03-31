@@ -1,4 +1,5 @@
 import 'package:dawin_shopping_mall/first_screen.dart';
+import 'package:dawin_shopping_mall/post_screen.dart';
 import 'package:flutter/material.dart';
 
 int _bottomNavigationBarIndex = 0;
@@ -38,7 +39,7 @@ Widget _buildBody() {
 }
 
 // 빌드 플로팅 액션 버튼 함수
-Widget? _buildFloatingActionButton() {
+Widget? _buildFloatingActionButton(BuildContext context) {
   // 선택한 바텀 메뉴에 따라 플로팅 액션 버튼을 보여줄지 말지 결정
   // null 을 반환할 수도 있기 때문에 반환 타입 Widget? (물음표 붙임)
   switch (_bottomNavigationBarIndex) {
@@ -46,7 +47,8 @@ Widget? _buildFloatingActionButton() {
       // 플로팅 액션 버튼 반환
       return FloatingActionButton(
         onPressed: () {
-          print('Floating Action Button Clicked');
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const PostScreen()));
         },
         backgroundColor: Colors.blue,
         child: const Icon(Icons.add),
@@ -96,7 +98,7 @@ class _TopScreenState extends State<TopScreen> {
         ],
       ),
       // 고정된 위치에 떠있는 버튼, 앱바/바디/바텀내비게이션바 와 같은 레벨
-      floatingActionButton: _buildFloatingActionButton(),
+      floatingActionButton: _buildFloatingActionButton(context),
     );
   }
 }

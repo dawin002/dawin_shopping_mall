@@ -6,6 +6,7 @@ class ShoppingItem {
   String id;
   String price;
   String imageSrc; // 고객이 이미지를 올림 -> 파이어베이스에 업로드해서 주소로 바꿈 -> 주소값을 배정
+  // imageSrc 에 파이어베이스 스토리지 주소를 넣으면 됨
 
   // 초기화
   ShoppingItem({
