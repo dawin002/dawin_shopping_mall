@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:dawin_shopping_mall/FirebaseStoreService.dart';
-import 'package:dawin_shopping_mall/product_detail_screen.dart';
-import 'package:dawin_shopping_mall/shopping_item.dart';
+import 'package:dawin_shopping_mall/utils/firebase_store_service.dart';
+import 'package:dawin_shopping_mall/screens/product_detail_screen.dart';
+import 'package:dawin_shopping_mall/dto/shopping_item.dart';
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -181,13 +181,16 @@ class _FirstScreenState extends State<FirstScreen>
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text(_shoppingItems[index].name,
-                                        style:
-                                            const TextStyle(color: Colors.red)),
+                                    Text(
+                                      _shoppingItems[index].name,
+                                      style: const TextStyle(color: Colors.red),
+                                    ),
                                     const SizedBox(width: 4),
-                                    Text(_shoppingItems[index].price,
-                                        style: const TextStyle(
-                                            color: Colors.blue)),
+                                    Text(
+                                      _shoppingItems[index].price,
+                                      style:
+                                          const TextStyle(color: Colors.blue),
+                                    ),
                                   ],
                                 ),
                               ],

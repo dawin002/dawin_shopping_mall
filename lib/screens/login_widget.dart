@@ -1,6 +1,7 @@
-import 'package:dawin_shopping_mall/FirebaseAuthService.dart';
-import 'package:dawin_shopping_mall/shopping_mall_screen.dart';
-import 'package:dawin_shopping_mall/sign_up_screen.dart';
+import 'package:dawin_shopping_mall/screens/first_screen.dart';
+import 'package:dawin_shopping_mall/screens/top_screen.dart';
+import 'package:dawin_shopping_mall/utils/firebase_auth_service.dart';
+import 'package:dawin_shopping_mall/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -78,17 +79,17 @@ class _LoginWidgetState extends State<LoginWidget> {
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: () {
-                    var a = _authService.singInWithEmailAndPassword(
+                  onPressed: () async {
+                    final a = await _authService.singInWithEmailAndPassword(
                         _emailController.text, _passwordController.text);
+                    print(a);
                     if (a == null) {
-                      print("회원가입 실패!");
+                      print("로그인 실패!");
                     } else {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const ShoppingMallScreen()));
+                              builder: (context) => const TopScreen()));
                     }
                   },
                   style: ElevatedButton.styleFrom(

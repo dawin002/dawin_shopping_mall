@@ -1,4 +1,4 @@
-import 'package:dawin_shopping_mall/FirebaseAuthService.dart';
+import 'package:dawin_shopping_mall/utils/firebase_auth_service.dart';
 import 'package:flutter/material.dart';
 
 class SignUpWidget extends StatefulWidget {

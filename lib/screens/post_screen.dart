@@ -1,4 +1,4 @@
-import 'package:dawin_shopping_mall/image_upload_util.dart';
+import 'package:dawin_shopping_mall/utils/image_upload_util.dart';
 import 'package:flutter/material.dart';
 
 class PostScreen extends StatefulWidget {

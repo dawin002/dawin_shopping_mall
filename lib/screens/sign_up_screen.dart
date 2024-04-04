@@ -1,4 +1,4 @@
-import 'package:dawin_shopping_mall/sign_up_widget.dart';
+import 'package:dawin_shopping_mall/screens/sign_up_widget.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
